@@ -43,16 +43,16 @@ curl -o /etc/xdg/openbox/autostart https://raw.githubusercontent.com/tecstaffing
 # mark executable
 chmod +X /etc/xdg/openbox/autostart
 # pull firefox.sh
-curl -o /home/pi/firefox.sh https://raw.githubusercontent.com/tecstaffing-dev/kiosksetup/main/firefox.sh
+curl -o /home/$USER/firefox.sh https://raw.githubusercontent.com/tecstaffing-dev/kiosksetup/main/firefox.sh
 # change firefox.sh depending on command switch
-sed -i "s|fsind|${1}|g" firefox.sh
+sed -i "s|fsind|${1}|g" /home/$USER/firefox.sh
 # mark executable
-chmod +X /home/pi/firefox.sh
+chmod +X /home/$USER/firefox.sh
 # owned by pi user
-chown -R pi:pi /home/pi/firefox.sh
+chown -R pi:pi /home/$USER/firefox.sh
 # Create autostart for startx
-echo "[[ -z \$DISPLAY && \$XDG_VTNR -eq 1 ]] && startx --" > /home/pi/.bash_profile
-chown -R pi:pi /home/pi/.bash_profile
+echo "[[ -z \$DISPLAY && \$XDG_VTNR -eq 1 ]] && startx --" > /home/$USER/.bash_profile
+chown -R pi:pi /home/$USER/.bash_profile
 echo "Script is complete... rebooting in 10 seconds."
 sleep 10
 reboot
