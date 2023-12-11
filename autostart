@@ -14,4 +14,4 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # Unneeded since switch to firefox
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
-sh /home/pi/firefox.sh
+sh /home/$USER/firefox.sh
