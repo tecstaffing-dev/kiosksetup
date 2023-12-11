@@ -44,6 +44,8 @@ curl -o /etc/xdg/openbox/autostart https://raw.githubusercontent.com/tecstaffing
 chmod +X /etc/xdg/openbox/autostart
 # pull firefox.sh
 curl -o /home/pi/firefox.sh https://raw.githubusercontent.com/tecstaffing-dev/kiosksetup/main/firefox.sh
+# change firefox.sh depending on command switch
+sed -i "s|fsind|${1}|g" firefox.sh
 # mark executable
 chmod +X /home/pi/firefox.sh
 # owned by pi user
